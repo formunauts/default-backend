@@ -1,10 +1,10 @@
-FROM cloudposse/packages:0.2.1 as packages
-FROM nginx:1.15.0-alpine
+FROM hairyhenderson/gomplate:v3.4.0-alpine as gomplate
+FROM nginx:1.15-alpine
 
 ENV HOMEPAGE=https://formunauts.com
 ENV EMAIL=support@formunauts.at
 
-COPY --from=packages /packages/bin/gomplate /usr/bin/
+COPY --from=gomplate /gomplate /usr/bin/gomplate
 
 ADD rootfs/ /
 

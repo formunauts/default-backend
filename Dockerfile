@@ -4,7 +4,7 @@ FROM nginx:1.15-alpine
 ENV HOMEPAGE=https://formunauts.com
 ENV EMAIL=support@formunauts.at
 
-COPY --from=gomplate /gomplate /usr/bin/gomplate
+COPY --from=gomplate /bin/gomplate /usr/bin/gomplate
 
 ADD rootfs/ /
 
